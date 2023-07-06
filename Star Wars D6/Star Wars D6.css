@@ -129,12 +129,12 @@
     width: 100%;
 }
 
-.button[type="roll"] {
+.ui-dialog .charsheet .button[type="roll"] {
     background-image: radial-gradient(circle, #fff, #4bd5ee);
     border: 2px solid #4bd5ee;
     border-radius: 50px;
     height: 30px;
-    margin: 10% 10% 10% 10%;
+    margin: 3px 3px 3px 3px;
     width: 30px;
     text-align: center;
     vertical-align: middle;
@@ -194,7 +194,7 @@
     width: 60px;
     height: 30px;
     top: 0;
-    left: 1;
+    left: 66%;
     right: 0;
     bottom: 0;
     background-color: #000;
