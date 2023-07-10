@@ -16,7 +16,7 @@
                 <div class="sheet-col">
                     <div class="sheet-table">
                         <div class="sheet-table-row">
-                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/6628797827e7ed3339b12e467f8776881b237670/Star%20Wars%20D6/StarWarsD6Logo.png" alt="Star Wars Logo"/>
+                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Logo.png" alt="Star Wars Logo"/>
                             <label class="sheet-label" style="font-size:10px">Hoja de Personaje Versión 1.00</label>
                             <hr class="sheet-line"/>
                             <label class="sheet-label">Estado de Salud<br/>
@@ -325,48 +325,22 @@
             <!-- COMBATE -->
             <div class="sheet-tab-content tab2">
                 <hr class="sheet-line"/>
-                <div class="sheet-colrow">
+                <!-- ARMADURA -->
+                <label class="sheet-label-center">ARMADURA</label>
+                <div class="sheet-3colrow">
                     <div class="sheet-col">
-                        <!-- ARMADURA -->
-                        <label class="sheet-label-center">ARMADURA</label>
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Nombre de la Armadura<br/>
+                                    <label class="sheet-label">Defensa<br/>
                                         <input type="text" name="attr_armor_name" class="width100">
-                                    </label>
-                                </div>
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Tipo<br/>
-                                        <input type="text" name="attr_armor_type" class="width80">
-                                    </label>
-                                </div>
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Material<br/>
-                                        <input type="text" name="attr_armor_material" class="width80">
                                     </label>
                                 </div>
                             </div>
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Protección<br/>
-                                        <input type="number" name="attr_protectdice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_protectpip" class="weapon-circle4" value="0" min="-1" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Protección}} {{dice_number=@{protectdice} + @{strength}}} {{pips=@{protectpip} + @{strength_pip}}} {{result=[[(@{protectdice} + @{strength})D6sd + @{protectpip} + @{strength_pip}]]}}" name="roll_protectarmorname"></button>
-                                    </label>
-                                </div>
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Escudo de Energía<br/>
-                                        <input type="number" name="attr_shielddice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_shieldpip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Escudo de Energía}} {{dice_number=@{shielddice} + @{strength}}} {{pips=@{shieldpip} + @{strength_pip}}} {{result=[[(@{shielddice} + @{strength})D6sd + @{shieldpip} + @{strength_pip}]]}}" name="roll_shieldarmorname"></button>
-                                    </label>
-                                </div>
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Sistema Multi-Frecuencia de Objetivos<br/>
-                                        <input type="number" name="attr_smfaodice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_smfaopip" class="weapon-circle4" value="0" min="-1" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} SMFAO}} {{dice_number=@{smfaodice} + @{perception}}} {{pips=@{smfaopip} + @{perception_pip}}} {{result=[[(@{smfaodice} + @{perception})D6sd + @{smfaopip} + @{perception_pip}]]}}" name="roll_smfaoarmorname"></button>
+                                    <label class="sheet-label">Tipo<br/>
+                                        <input type="text" name="attr_armor_type" class="width100">
                                     </label>
                                 </div>
                             </div>
@@ -376,21 +350,133 @@
                                         - <input type="number" name="attr_minus_dex" class="weapon-circle4" value="0" min="0" max="2"/>
                                     </label>
                                 </div>
+                            </div>
+                            <div class="sheet-table-row">
                                 <div class="sheet-table-data">
                                     <label class="sheet-label">Penalizador Percepción<br/>
                                         - <input type="number" name="attr_minus_per" class="weapon-circle4" value="0" min="0" max="2"/>
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="sheet-table">
+                            <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Notas Adicionales<br/>
-                                        <textarea rows="4" name="attr_armor_notes" class="textareaM"></textarea>
+                                    <label class="sheet-label">Modelo<br/>
+                                        <input type="text" name="attr_armor_model" class="width100">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sheet-table-row">
+                                <div class="sheet-table-data">
+                                    <label class="sheet-label">Material<br/>
+                                        <input type="text" name="attr_armor_material" class="width100">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sheet-table-row">
+                                <div class="sheet-table-data">
+                                    <label class="sheet-label">Durabilidad<br/>
+                                        <div class="sheet-table">
+                                            <div class="sheet-table-row">
+                                                <div class="sheet-table-data">
+                                                    <label class="container">
+                                                        <input type="checkbox" name="attr_armor_durability_1"/><span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="sheet-table-data">
+                                                    <label class="container">
+                                                        <input type="checkbox" name="attr_armor_durability_2"/><span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="sheet-table-data">
+                                                    <label class="container">
+                                                        <input type="checkbox" name="attr_armor_durability_3"/><span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <hr class="sheet-line"/>
-                        <!-- REACCIONES -->
-                        <label class="sheet-label-center">REACCIONES</label>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="sheet-table">
+                            <div class="sheet-table-row">
+                                <div class="sheet-table-data">
+                                    <label class="sheet-label">Protección<br/>
+                                        <input type="number" name="attr_protectdice" class="weapon-circle4" value="0" min="0"/> D +
+                                        <input type="number" name="attr_protectpip" class="weapon-circle4" value="0" min="-1" max="2"/>
+                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Protección}} {{dice_number=@{protectdice} + @{strength}}} {{pips=@{protectpip} + @{strength_pip}}} {{result=[[(@{protectdice} + @{strength})D6sd + @{protectpip} + @{strength_pip}]]}}" name="roll_protectarmorname"></button>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sheet-table-row">
+                                <div class="sheet-table-data">
+                                    <label class="sheet-label">Escudo de Energía<br/>
+                                        <input type="number" name="attr_shielddice" class="weapon-circle4" value="0" min="0"/> D +
+                                        <input type="number" name="attr_shieldpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Escudo de Energía}} {{dice_number=@{shielddice} + @{strength}}} {{pips=@{shieldpip} + @{strength_pip}}} {{result=[[(@{shielddice} + @{strength})D6sd + @{shieldpip} + @{strength_pip}]]}}" name="roll_shieldarmorname"></button>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="sheet-table-row">
+                                <div class="sheet-table-data">
+                                    <label class="sheet-label">Sistema Multi-Frecuencia de Adquisición de Objetivos<br/>
+                                        <input type="number" name="attr_smfaodice" class="weapon-circle4" value="0" min="0"/> D +
+                                        <input type="number" name="attr_smfaopip" class="weapon-circle4" value="0" min="-1" max="2"/>
+                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} SMFAO}} {{dice_number=@{smfaodice} + @{perception}}} {{pips=@{smfaopip} + @{perception_pip}}} {{result=[[(@{smfaodice} + @{perception})D6sd + @{smfaopip} + @{perception_pip}]]}}" name="roll_smfaoarmorname"></button>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-2colrow">
+                    <div class="sheet-col">
+                        <label class="sheet-label">Mejoras<br/>
+                            <div class="sheet-table">
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="containerE">
+                                            <input type="checkbox" name="attr_armor_enhancement_1_check"/><span class="checkmarkE"></span>
+                                        </label>
+                                        <input type="text" name="attr_armor_enhancement_1" class="width80">
+                                    </div>
+                                </div>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="containerE">
+                                            <input type="checkbox" name="attr_armor_enhancement_2_check"/><span class="checkmarkE"></span>
+                                        </label>
+                                        <input type="text" name="attr_armor_enhancement_2" class="width80">
+                                    </div>
+                                </div>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="containerE">
+                                            <input type="checkbox" name="attr_armor_enhancement_3_check"/><span class="checkmarkE"></span>
+                                        </label>
+                                        <input type="text" name="attr_armor_enhancement_3" class="width80">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="sheet-col">
+                        <label class="sheet-label">Notas Adicionales<br/>
+                            <textarea rows="6" name="attr_armor_notes" class="textarea100"></textarea>
+                        </label>
+                    </div>
+                </div>
+                <hr class="sheet-line"/>
+                <!-- REACCIONES -->
+                <label class="sheet-label-center">REACCIONES</label>
+                <div class="sheet-3colrow">
+                    <div class="sheet-col">
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
@@ -400,6 +486,12 @@
                                         <button class="button" type="roll" value="&{template:skill} {{name=Bloquear}} {{dice_number=@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{blockpip}}} {{result=[[(@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{blockpip}]]}}" name="roll_block"></button>
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="sheet-table">
+                            <div class="sheet-table-row">
                                 <div class="sheet-table-data">
                                     <label class="sheet-label">Desviar<br/>
                                         <input type="number" name="attr_parrydice" class="weapon-circle4" value="0" min="0"/> D +
@@ -407,6 +499,12 @@
                                         <button class="button" type="roll" value="&{template:skill} {{name=Desviar}} {{dice_number=@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{parrypip}}} {{result=[[(@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{parrypip}]]}}" name="roll_parry"></button>
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="sheet-table">
+                            <div class="sheet-table-row">
                                 <div class="sheet-table-data">
                                     <label class="sheet-label">Esquivar<br/>
                                         <input type="number" name="attr_dodgedice" class="weapon-circle4" value="0" min="0"/> D +
@@ -414,74 +512,131 @@
                                         <button class="button" type="roll" value="&{template:skill} {{name=Esquivar}} {{dice_number=@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{dodgepip}}} {{result=[[(@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{dodgepip}]]}}" name="roll_dodge"></button>
                                     </label>
                                 </div>
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Aguantar<br/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=Aguantar}} {{dice_number=@{strength}}} {{pips=@{strength_pip}}} {{result=[[@{strength}D6sd + @{strength_pip}]]}}" name="roll_endure"></button>
-                                    </label>
-                                </div>
                             </div>
-                        </div>
-                        <hr class="sheet-line"/>
-                        <!-- ARMAS -->
-                        <label class="sheet-label-center">ARMAS</label>
-                        <div class="sheet-table">
-                            <fieldset class="repeating_attacks">
-                                <div class="sheet-table-row">
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Nombre del Ataque<br/>
-                                            <input type="text" name="attr_attack_name" class="width100">
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Habilidad<br/>
-                                            <input type="text" name="attr_skill_attack_name" class="width80" list="weapon_skills">
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Especialización<br/>
-                                            <input type="number" name="attr_attackdice" class="weapon-circle4" value="0" min="0"/> D +
-                                            <input type="number" name="attr_attackpip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Daño<br/>
-                                            <input type="number" name="attr_damagedice" class="weapon-circle4" value="1" min="0"/> D +
-                                            <input type="number" name="attr_damagepip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                            <button class="button" type="roll" value="&{template:attack} {{name=@{attack_name}}} {{dice_number=@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{attackpip}}} {{result=[[(@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{attackpip}]]}} {{damage=[[(@{damagedice})D6sd + @{damagepip}]]}}" name="roll_attackname"></button>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="sheet-table-row">
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Alcance - Corto / Medio / Largo<br/>
-                                            <input type="number" name="attr_point_blank_range" class="weapon-circle4" value="0" min="0"/> -
-                                            <input type="number" name="attr_short_range" class="weapon-circle4" value="0" min="0"/> /
-                                            <input type="number" name="attr_medium_range" class="weapon-circle4" value="0" min="0"/> /
-                                            <input type="number" name="attr_long_range" class="weapon-circle4" value="0" min="0"/>
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Munición / Cartucho<br/>
-                                            <input type="number" name="attr_ammo" class="weapon-circle4" value="0" min="0"/> /
-                                            <input type="number" name="attr_ammo_max" class="weapon-circle4" value="0" min="0"/>
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Cadencia<br/>
-                                            <input type="number" name="attr_rate_of_fire" class="weapon-circle4" value="1" min="1"/>
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Notas Adicionales<br/>
-                                            <textarea rows="4" name="attr_attack_notes" class="textareaM"></textarea>
-                                        </label>
-                                    </div>
-                                </div>
-                                <hr class="sheet-line"/>
-                            </fieldset>
                         </div>
                     </div>
                 </div>
+                <hr class="sheet-line"/>
+                <!-- REACCIONES -->
+                <label class="sheet-label-center">REACCIONES</label>
+                <div class="sheet-col">
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Bloquear<br/>
+                                    <input type="number" name="attr_blockdice" class="weapon-circle4" value="0" min="0"/> D +
+                                    <input type="number" name="attr_blockpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=Bloquear}} {{dice_number=@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{blockpip}}} {{result=[[(@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{blockpip}]]}}" name="roll_block"></button>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Desviar<br/>
+                                    <input type="number" name="attr_parrydice" class="weapon-circle4" value="0" min="0"/> D +
+                                    <input type="number" name="attr_parrypip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=Desviar}} {{dice_number=@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{parrypip}}} {{result=[[(@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{parrypip}]]}}" name="roll_parry"></button>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Esquivar<br/>
+                                    <input type="number" name="attr_dodgedice" class="weapon-circle4" value="0" min="0"/> D +
+                                    <input type="number" name="attr_dodgepip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=Esquivar}} {{dice_number=@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{dodgepip}}} {{result=[[(@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{dodgepip}]]}}" name="roll_dodge"></button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="sheet-line"/>
+                <!-- ARMAS -->
+                <label class="sheet-label-center">ARMAS CORTAS</label>
+                <hr class="sheet-line"/>
+                <!-- ARMAS -->
+                <label class="sheet-label-center">ARMAS DE RANGO</label>
+                <fieldset class="repeating_attacks">
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Ataque<br/>
+                                    <input type="text" name="attr_attack_name" class="width100">
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Modelo<br/>
+                                    <input type="text" name="attr_attack_model" class="width80"/>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Mejoras<br/>
+                                    <input type="text" name="attr_attack_enhancements" class="width80"/>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Ensamblajes<br/>
+                                    <input type="text" name="attr_attack_enhancements" class="width80"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Habilidad<br/>
+                                    <input type="text" name="attr_skill_attack_name" class="width80" list="weapon_skills">
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Especialización<br/>
+                                    <input type="number" name="attr_attackdice" class="weapon-circle4" value="0" min="0"/> D +
+                                    <input type="number" name="attr_attackpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Daño<br/>
+                                    <input type="number" name="attr_damagedice" class="weapon-circle4" value="1" min="0"/> D +
+                                    <input type="number" name="attr_damagepip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                    <button class="button" type="roll" value="&{template:attack} {{name=@{attack_name}}} {{dice_number=@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{attackpip}}} {{result=[[(@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{attackpip}]]}} {{damage=[[(@{damagedice})D6sd + @{damagepip}]]}}" name="roll_attackname"></button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Alcance - Corto / Medio / Largo / Extremo<br/>
+                                    <input type="number" name="attr_point_blank_range" class="weapon-circle4" value="0" min="0"/> -
+                                    <input type="number" name="attr_short_range" class="weapon-circle4" value="0" min="0"/> /
+                                    <input type="number" name="attr_medium_range" class="weapon-circle4" value="0" min="0"/> /
+                                    <input type="number" name="attr_long_range" class="weapon-circle4" value="0" min="0"/> /
+                                    <input type="number" name="attr_extreme_range" class="weapon-circle4" value="0" min="0"/>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Cadencia<br/>
+                                    <input type="number" name="attr_rate_of_fire" class="weapon-circle4" value="1" min="1"/>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Munición / Cartucho<br/>
+                                    <input type="number" name="attr_ammo" class="weapon-circle4" value="0" min="0"/> /
+                                    <input type="number" name="attr_ammo_max" class="weapon-circle4" value="0" min="0"/>
+                                </label>
+                            </div>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Carga<br/>
+                                    <input type="number" name="attr_encumbrance" class="weapon-circle4" value="0" min="0"/>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Notas Adicionales<br/>
+                                    <textarea rows="4" name="attr_attack_notes" class="textareaM"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="sheet-line"/>
+                </fieldset>
             </div>
             <!-- EQUIPO -->
             <div class="sheet-tab-content tab3">
@@ -871,118 +1026,10 @@
                 <div class="sheet-col">
                     <div class="sheet-table">
                         <div class="sheet-table-row">
-                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/6628797827e7ed3339b12e467f8776881b237670/Star%20Wars%20D6/StarWarsD6Logo.png" alt="Star Wars Logo"/>
+                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Logo.png" alt="Star Wars Logo"/>
                             <label class="sheet-label" style="font-size:10px">Hoja de Personaje Versión 1.00</label>
                             <hr class="sheet-line"/>
-                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/a73e7fcaa3cda9b19ede70426fa87d8050ca1f8e/StarWarsD6CreatureLogo.png" alt="Star Wars Mythosaur"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="sheet-col">
-                    <div class="sheet-table">
-                        <div class="sheet-table-row">
-                          <span class="sheet-table-data">
-                            <label class="sheet-label">Nombre<br/>
-                              <input type="text" name="attr_creature_name" class="width100"/>
-                            </label>
-                          </span>
-                        </div>
-                        <div class="sheet-table-row">
-                          <span class="sheet-table-data">
-                            <label class="sheet-label">Clasificación<br/>
-                              <input type="text" name="attr_creature_classification" class="width100"/>
-                            </label>
-                          </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Apariencia<br/>
-                  <input type="text" name="attr_creature_type" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Cabello / Ojos / Piel<br/>
-                  <input type="text" name="attr_creature_skin" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Señas Particulares<br/>
-                  <textarea rows="4" name="attr_creature_description" class="textarea3"></textarea>
-                </label>
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="sheet-col">
-                    <div class="sheet-table">
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Planeta Natal<br/>
-                  <input type="text" name="attr_creature_planet" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Especie / Género<br/>
-                  <input type="text" name="attr_creature" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Estatura / Peso / Tamaño<br/>
-                  <input type="text" name="attr_creature_size" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Escala<br/>
-                  <input type="text" name="attr_creature_scale" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Habitat<br/>
-                  <input type="text" name="attr_creature_habitat" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Dieta<br/>
-                  <input type="text" name="attr_creature_diet" class="width100"/>
-                </label>
-              </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sheet-colrow">
-                <label class="sheet-label">Capacidades Especiales<br/>
-                    <textarea rows="10" name="attr_creature_special" class="textarea100"></textarea>
-                </label>
-            </div>
-
-            <hr class="sheet-line"/>
-
-            <div class="sheet-2colrow">
-                <div class="sheet-col">
-                    <div class="sheet-table">
-                        <div class="sheet-table-row">
-                            <label class="sheet-label">Sensible a La Fuerza<br/>
-                                <label class="switch-sensitive">
-                                    <input type="checkbox" name="attr_creature_force_sensitive">
-                                    <span class="slider-sensitive round"></span>
-                                </label>
-                            </label>
+                            <img width="400px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Creature%20Logo.png" alt="Star Wars Mythosaur"/>
                             <label class="sheet-label">Estado de Salud<br/>
                                 <input type="range" min="0" max="5" value="0" class="slider-health" name="attr_wound_level"/>
                                 <select class="width80" name="attr_wound_level">
@@ -995,63 +1042,165 @@
                                 </select>
                             </label>
                         </div>
-                    </div>
-                    <div class="sheet-table">
                         <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Movimiento
-                  <input type="number" name="attr_creature_movement" min="0" max="50" class="black-circle50"/>
-                </label>
-                <label class="sheet-label">Máximo
-                  <input type="number" name="attr_creature_movement_max" min="0" max="50" class="black-circle50"/>
-                </label>
-              </span>
-                            <span class="sheet-table-data">
-                <label class="sheet-label">Acciones<br/>
-                  <input type="number" name="attr_creature_num_actions" value="1" min="1" max="15" class="white-circle50"/>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Modificadores<br/>
-                  <input type="number" name="attr_creature_initiative" class="white-circle50" value="0" min="-1"/> D +
-                  <input type="number" name="attr_creature_initiative_pip" class="white-circle50" value="0" min="-2" max="2"/>
-                </label>
-              </span>
-                            <span class="sheet-table-data">
-                <label class="sheet-label">Iniciativa<br/>
-                  <button class="button" type="roll" value="&{template:skill} {{name=INICIATIVA}} {{dice_number=@{creature_initiative} + @{dexterity} + @{perception} - @{wound_mod}}} {{pips=@{creature_initiative_pip} + @{dexterity_pip} + @{perception_pip}}} {{result=[[(@{creature_initiative} + @{dexterity} + @{perception} - @{wound_mod})D6sd + @{creature_initiative_pip} + @{dexterity_pip} + @{perception_pip} &{tracker}]]}}" name="roll_creature_initiative"></button>
-                </label>
-              </span>
-                        </div>
-                        <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label">Modificadores<br/>
-                  <input type="number" name="attr_orneriness" class="white-circle50" value="0" min="-1"/> D +
-                  <input type="number" name="attr_orneriness_pip" class="white-circle50" value="0" min="-2" max="2"/>
-                </label>
-              </span>
-                            <span class="sheet-table-data">
-                <label class="sheet-label">Terquedad<br/>
-                  <button class="button" type="roll" value="&{template:skill} {{name=TERQUEDAD}} {{dice_number=@{orneriness} - @{wound_mod} - @{creature_num_actions_mod}}} {{pips=@{orneriness_pip}}} {{result=[[(@{orneriness} - @{wound_mod} - @{creature_num_actions_mod})D6sd + @{orneriness_pip}]]}}" name="roll_orneriness"></button>
-                </label>
-              </span>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Terquedad<br/>
+                                    <input type="number" name="attr_orneriness" class="white-circle50" value="0" min="-1"/> D +
+                                    <input type="number" name="attr_orneriness_pip" class="white-circle50" value="0" min="-2" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=TERQUEDAD}} {{dice_number=@{orneriness} - @{wound_mod} - @{creature_num_actions_mod}}} {{pips=@{orneriness_pip}}} {{result=[[(@{orneriness} - @{wound_mod} - @{creature_num_actions_mod})D6sd + @{orneriness_pip}]]}}" name="roll_orneriness"></button>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="sheet-col">
-                    <label class="sheet-label-center">HABILIDADES</label>
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Especie / Género<br/>
+                                    <input type="text" name="attr_creature" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Clasificación<br/>
+                                    <input type="text" name="attr_creature_classification" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Apariencia<br/>
+                                    <input type="text" name="attr_creature_type" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Estatura / Peso / Tamaño<br/>
+                                    <input type="text" name="attr_creature_size" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Pelo / Ojos / Piel<br/>
+                                    <input type="text" name="attr_creature_skin" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Planeta Natal<br/>
+                                    <input type="text" name="attr_creature_planet" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Escala<br/>
+                                    <input type="text" name="attr_creature_scale" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Habitat<br/>
+                                    <input type="text" name="attr_creature_habitat" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Dieta<br/>
+                                    <input type="text" name="attr_creature_diet" class="width100"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Movimiento / Máximo<br/>
+                                    <input type="number" name="attr_creature_movement" min="0" max="50" class="black-circle50"/> /
+                                    <input type="number" name="attr_creature_movement_max" min="0" max="50" class="black-circle50"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Iniciativa<br/>
+                                    <input type="number" name="attr_creature_initiative" class="white-circle50" value="0" min="-1"/> D +
+                                    <input type="number" name="attr_creature_initiative_pip" class="white-circle50" value="0" min="-2" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=INICIATIVA}} {{dice_number=@{creature_initiative} + @{dexterity} + @{perception} - @{wound_mod}}} {{pips=@{creature_initiative_pip} + @{dexterity_pip} + @{perception_pip}}} {{result=[[(@{creature_initiative} + @{dexterity} + @{perception} - @{wound_mod})D6sd + @{creature_initiative_pip} + @{dexterity_pip} + @{perception_pip} &{tracker}]]}}" name="roll_creature_initiative"></button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Acciones<br/>
+                                    <input type="number" name="attr_creature_num_actions" value="1" min="1" max="15" class="white-circle50"/>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-col">
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Señas Particulares<br/>
+                                    <textarea rows="4" name="attr_creature_description" class="textarea6"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Ataques Especiales<br/>
+                                    <textarea rows="10" name="attr_creature_special_attacks" class="textarea6"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Capacidades Especiales<br/>
+                                    <textarea rows="10" name="attr_creature_special" class="textarea6"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Defensas Especiales<br/>
+                                    <textarea rows="10" name="attr_creature_special_defenses" class="textarea6"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <label class="sheet-label">Sensible a La Fuerza<br/>
+                                <label class="switch-sensitive">
+                                    <input type="checkbox" name="attr_creature_force_sensitive">
+                                    <span class="slider-sensitive round"></span>
+                                </label>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="sheet-line"/>
+
+            <div class="sheet-2colrow">
+                <label class="sheet-label-center">HABILIDADES</label>
+                <div class="sheet-col">
                     <!-- DEXTERITY -->
                     <div class="sheet-table">
                         <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label-right">DESTREZA
-                  <input type="number" name="attr_dexterity" class="white-circle50" value="1" min="1"/> D +
-                  <input type="number" name="attr_dexterity_pip" class="white-circle50" value="0" min="0" max="2"/>
-                  <button class="button" type="roll" value="&{template:skill} {{name=DESTREZA}} {{dice_number=@{dexterity} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_dex}}} {{pips=@{dexterity_pip}}} {{result=[[(@{dexterity} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_dex})D6sd + @{dexterity_pip}]]}}" name="roll_dexterity"></button>
-                </label>
-              </span>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label-right">DESTREZA
+                                    <input type="number" name="attr_dexterity" class="white-circle50" value="1" min="1"/> D +
+                                    <input type="number" name="attr_dexterity_pip" class="white-circle50" value="0" min="0" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=DESTREZA}} {{dice_number=@{dexterity} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_dex}}} {{pips=@{dexterity_pip}}} {{result=[[(@{dexterity} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_dex})D6sd + @{dexterity_pip}]]}}" name="roll_dexterity"></button>
+                                </label>
+                            </div>
                         </div>
                         <div class="sheet-table-row">
                             <fieldset class="repeating_dexskills">
@@ -1068,13 +1217,13 @@
                     <!-- STRENGTH -->
                     <div class="sheet-table">
                         <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label-right">FORTALEZA
-                  <input type="number" name="attr_strength" class="white-circle50" value="1" min="1"/> D +
-                  <input type="number" name="attr_strength_pip" class="white-circle50" value="0" min="0" max="2"/>
-                  <button class="button" type="roll" value="&{template:skill} {{name=FORTALEZA}} {{dice_number=@{strength} - @{wound_mod} - @{creature_num_actions_mod}}} {{pips=@{strength_pip}}} {{result=[[(@{strength} - @{wound_mod} - @{creature_num_actions_mod})D6sd + @{strength_pip}]]}}" name="roll_strength"></button>
-                </label>
-              </span>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label-right">FORTALEZA
+                                    <input type="number" name="attr_strength" class="white-circle50" value="1" min="1"/> D +
+                                    <input type="number" name="attr_strength_pip" class="white-circle50" value="0" min="0" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=FORTALEZA}} {{dice_number=@{strength} - @{wound_mod} - @{creature_num_actions_mod}}} {{pips=@{strength_pip}}} {{result=[[(@{strength} - @{wound_mod} - @{creature_num_actions_mod})D6sd + @{strength_pip}]]}}" name="roll_strength"></button>
+                                </label>
+                            </div>
                         </div>
                         <div class="sheet-table-row">
                             <fieldset class="repeating_strskills">
@@ -1087,17 +1236,18 @@
                             </fieldset>
                         </div>
                     </div>
-                    <hr class="sheet-line"/>
+                </div>
+                <div class="sheet-col">
                     <!-- PERCEPTION -->
                     <div class="sheet-table">
                         <div class="sheet-table-row">
-              <span class="sheet-table-data">
-                <label class="sheet-label-right">PERCEPCIÓN
-                  <input type="number" name="attr_perception" class="white-circle50" value="1" min="1"/> D +
-                  <input type="number" name="attr_perception_pip" class="white-circle50" value="0" min="0" max="2"/>
-                  <button class="button" type="roll" value="&{template:skill} {{name=PERCEPCION}} {{dice_number=@{perception} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_per}}} {{pips=@{perception_pip}}} {{result=[[(@{perception} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_per})D6sd + @{perception_pip}]]}}" name="roll_perception"></button>
-                </label>
-              </span>
+                            <div class="sheet-table-data">
+                                <label class="sheet-label-right">PERCEPCIÓN
+                                    <input type="number" name="attr_perception" class="white-circle50" value="1" min="1"/> D +
+                                    <input type="number" name="attr_perception_pip" class="white-circle50" value="0" min="0" max="2"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=PERCEPCION}} {{dice_number=@{perception} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_per}}} {{pips=@{perception_pip}}} {{result=[[(@{perception} - @{wound_mod} - @{creature_num_actions_mod} - @{creature_minus_per})D6sd + @{perception_pip}]]}}" name="roll_perception"></button>
+                                </label>
+                            </div>
                         </div>
                         <div class="sheet-table-row">
                             <fieldset class="repeating_perskills">
@@ -1217,7 +1367,7 @@
                                     </label>
                                 </div>
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Cadencia<br/>
+                                    <label class="sheet-label">Velocidad<br/>
                                         <input type="number" name="attr_creature_rate_of_attacks" class="weapon-circle4" value="1" min="1"/>
                                     </label>
                                 </div>
@@ -1240,10 +1390,10 @@
                 <div class="sheet-col">
                     <div class="sheet-table">
                         <div class="sheet-table-row">
-                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/6628797827e7ed3339b12e467f8776881b237670/Star%20Wars%20D6/StarWarsD6Logo.png" alt="Star Wars Logo"/>
+                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Logo.png" alt="Star Wars Logo"/>
                             <label class="sheet-label" style="font-size:10px">Hoja de Personaje Versión 1.00</label>
                             <hr class="sheet-line"/>
-                            <img width="150px" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/1883980f33739328f7c565c043933b3be6a310e6/Star%20Wars%20D6/Star%20Wars%20D6%20Vehicle%20Logo.png" alt="Star Wars Speed Bike"/>
+                            <img width="400px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Vehicle%20Logo.png" alt="Star Wars Speed Bike"/>
                         </div>
                     </div>
                 </div>
@@ -1260,10 +1410,10 @@
                 <div class="sheet-col">
                     <div class="sheet-table">
                         <div class="sheet-table-row">
-                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/6628797827e7ed3339b12e467f8776881b237670/Star%20Wars%20D6/StarWarsD6Logo.png" alt="Star Wars Logo"/>
+                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Logo.png" alt="Star Wars Logo"/>
                             <label class="sheet-label" style="font-size:10px">Hoja de Personaje Versión 1.00</label>
                             <hr class="sheet-line"/>
-                            <img width="150px" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/12593cc4d0e1933ba9501e795f8c61a81b312b2a/Star%20Wars%20D6/Star%20Wars%20D6%20Ship%20Logo.png" alt="Star Wars Millennium Falcon"/>
+                            <img width="400px" src="https://github.com/ChinoSkeleton/roll20-character-sheets/blob/master/Star%20Wars%20D6/Star%20Wars%20D6%20Ship%20Logo.png?raw=true" alt="Star Wars Millennium Falcon"/>
                         </div>
                     </div>
                 </div>
