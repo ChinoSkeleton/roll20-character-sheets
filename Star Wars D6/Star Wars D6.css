@@ -114,6 +114,15 @@
     width: 50px;
 }
 
+.credit {
+    border: 2px solid #776007;
+    border-radius: 10px;
+    background: #000;
+    color: #ffe81f;
+    text-align: right;
+    width: 50%;
+}
+
 .width50 {
     text-align: right;
     width: 50%;
@@ -140,7 +149,12 @@
     vertical-align: middle;
 }
 
-.button[type="roll"]:hover {
+.ui-dialog .charsheet .button[type="roll"]::before {
+    font-family: 'dicefontd6';
+    content: 'r';
+}
+
+.ui-dialog .charsheet .button[type="roll"]:hover {
     background-position: 0px;
     background-image: radial-gradient(circle, #0f0, #080, #040);
     border: 2px solid #080;
@@ -886,64 +900,6 @@ body.sheet-darkmode .sheet-label-right {
     width: 100%;
 }
 
-.sheet tab-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.sheet tab-buttons button {
-    background-color: #4bd5ee;
-    border: 1px solid #000;
-    color: #000;
-    float: left;
-}
-
-.sheet-character,
-.sheet-npc,
-.sheet-config,
-.sheet-journal,
-.sheet-skills,
-.sheet-background,
-.sheet-equipment,
-.sheet-force {
-    display: none;
-}
-
-.sheet-tabstoggle[value="character"] ~ div.sheet-character,
-.sheet-tabstoggle[value="npc"] ~ div.sheet-npc,
-.sheet-tabstoggle[value="configuration"] ~ div.sheet-config,
-.sheet-tabstoggle[value="journal"] ~ div.sheet-journal,
-.sheet-tabstoggle[value="skills"] ~ div.sheet-skills,
-.sheet-tabstoggle[value="background"] ~ div.sheet-background,
-.sheet-tabstoggle[value="equipment"] ~ div.sheet-equipment,
-.sheet-tabstoggle[value="force"] ~ div.sheet-force {
-    display: block;
-}
-
-/* Combat Section */
-.sheet-combat-section label {
-    text-align: center;
-    vertical-align: middle;
-    /* width: 100%; */
-}
-
-.sheet-combat-section input[type="number"] {
-    border-radius: 50px;
-    background: transparent;
-    height: 50px;
-    margin: 0% 5% 0% 5%;
-    text-align: center;
-    vertical-align: middle;
-    width: 50px;
-}
-
-.sheet-combat-section button {
-    height: 30px;
-    margin: 10% 10% 10% 10%;
-    width: 30px;
-    background: #4bd5ee;
-}
-
 .checkmark {
     position: absolute;
     top: 0;
@@ -1115,6 +1071,123 @@ body.sheet-darkmode .sheet-label-right {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.charsheet input.main-options.options-flag + span,/*displays the cog icon*/
+.charsheet input[type=radio]:checked ~ .master-container input.options-flag + span {
+    font-family: pictos;
+    font-style: normal;
+}
+
+.charsheet input.options-flag,
+.charsheet input.options-flag + span {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 15px;
+    height: 15px;
+}
+
+.charsheet input.options-flag {
+    z-index: 99;
+    opacity: 0;
+}
+
+.charsheet input.options-flag + span {
+    margin-top: 0;
+    display: none;
+    white-space: nowrap;
+    line-height: 15px;
+    font-size: 17px;
+    color: #ffe81f;
+    cursor: pointer;
+}
+
+.charsheet input.options-flag.main-options {
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
+
+.charsheet input.options-flag.main-options + span {
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    left: 20px;
+    font-size: 34px;
+    z-index: 2;
+    line-height: 30px;
+    opacity: .5;
+    display: block;
+}
+
+.charsheet input.options-flag.main-options:hover + span {
+    color: #ffe81f;
+    opacity: 1;
+}
+
+.charsheet input.options-flag:checked + span {
+    color: #ffe81f;
+    display: block;
+}
+
+
+.charsheet .sheet-block-a,
+.charsheet .sheet-block-switch:checked ~ .sheet-block-b {
+  display: block;
+}
+
+.charsheet .sheet-block-b,
+.charsheet .sheet-block-switch:checked ~ .sheet-block-a {
+  display: none;
+}
+
+/*Configure the tab buttons*/
+.charsheet .sheet-pc,
+.charsheet .sheet-npc,
+.charsheet .sheet-creature,
+.charsheet .sheet-vehicle,
+.charsheet .sheet-ship {
+    display: none;
+}
+
+/* show the selected tab */
+.charsheet .sheet-tabstoggle[value="pc"] ~ div.sheet-pc,
+.charsheet .sheet-tabstoggle[value="npc"] ~ div.sheet-npc,
+.charsheet .sheet-tabstoggle[value="creature"] ~ div.sheet-creature,
+.charsheet .sheet-tabstoggle[value="vehicle"] ~ div.sheet-vehicle,
+.charsheet .sheet-tabstoggle[value="ship"] ~ div.sheet-ship {
+    display: block;
+}
+
+.charsheet button.tab {
+    background: #000;
+    border: 2px solid #776007;
+    border-radius: 4px;
+    color: #ffe81f;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    height: 20px;
+    margin-right: 5px;
+    text-align: center;
+    transition-duration: 0.4s;
+    width: 100px;
+}
+
+.charsheet button.tab:hover {
+    background: linear-gradient(to bottom right, #ffe81f, #776007);
+    border: 2px solid #ffe81f;
+    color: #000;
+}
+
+.charsheet button .active {
+    background: linear-gradient(to bottom right, #ffe81f, #776007);
+    border: 2px solid #ffe81f;
+    color: #000;
 }
 
 /**** SAGA ****/
