@@ -517,12 +517,11 @@ body.sheet-darkmode .sheet-label-right {
 .charsheet input.tab2:checked ~ div.tab2,
 .charsheet input.tab3:checked ~ div.tab3,
 .charsheet input.tab4:checked ~ div.tab4,
-.charsheet input.tab5:checked ~ div.tab5,
-.charsheet input.tab6:checked ~ div.tab6 {
+.charsheet input.tab5:checked ~ div.tab5 {
     display: block;
 }
 
-.charsheet input.tab7:checked ~ div.sheet-tab-content {
+.charsheet input.tab6:checked ~ div.sheet-tab-content {
 	display: block;
 }
 

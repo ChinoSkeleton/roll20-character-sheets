@@ -12,44 +12,46 @@
 
         <hr class="sheet-line"/>
 
-        <div class="sheet-3colrow">
-            <div class="sheet-col">
-                <div class="sheet-table">
-                    <div class="sheet-table-row">
-                        <div class="sheet-table-data">
-                            <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Logo.png" alt="Star Wars Logo"/>
-                            <label class="sheet-label" style="font-size:10px">Hoja de Personaje Versión 1.00</label>
-                            <img width="100px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Creature%20Logo.png" alt="Star Wars Mythosaur"/>
+        <!-- ---------------------------------------- PC ---------------------------------------- -->
+        <div class="sheet-tab-content tab1">
+            <div class="sheet-3colrow">
+                <div class="sheet-col">
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <img width="300px" src="https://raw.githubusercontent.com/ChinoSkeleton/roll20-character-sheets/master/Star%20Wars%20D6/Star%20Wars%20D6%20Logo.png" alt="Star Wars Logo"/>
+                                <img width="150px" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/b8e2b765c0528254f43efdfd411b3ea1aa344510/Star%20Wars%20D6/Star%20Wars%20D6%20PC.png" alt="Star Wars PC"/>
+                                <label class="sheet-label" style="font-size:10px">Hoja de Personaje Versión 1.00</label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="sheet-col">
-                <div class="sheet-table">
-                    <div class="sheet-table-row">
-                        <div class="sheet-table-data">
-                            <label class="sheet-label">Estado de Salud<br/>
-                                <input type="range" min="0" max="5" value="0" class="slider-health" name="attr_wound_level"/>
-                                <select class="width100" name="attr_wound_level">
-                                    <option selected="selected" value="0">Normal [ 0 ]</option>
-                                    <option value="1">Aturdido [ -1D ]</option>
-                                    <option value="2">Herido [ -1D ]</option>
-                                    <option value="3">Doblemente Herido [ -2D ]</option>
-                                    <option value="4">Incapacitado [ -5D ]</option>
-                                    <option value="5">Mortalmente Herido [ X ]</option>
-                                </select>
-                            </label>
+                <div class="sheet-col">
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Estado de Salud<br/>
+                                    <input type="range" min="0" max="5" value="0" class="slider-health" name="attr_wound_level"/>
+                                    <select class="width100" name="attr_wound_level">
+                                        <option selected="selected" value="0">Normal [ 0 ]</option>
+                                        <option value="1">Aturdido [ -1D ]</option>
+                                        <option value="2">Herido [ -1D ]</option>
+                                        <option value="3">Doblemente Herido [ -2D ]</option>
+                                        <option value="4">Incapacitado [ -5D ]</option>
+                                        <option value="5">Mortalmente Herido [ X ]</option>
+                                    </select>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="sheet-table-row">
-                        <div class="sheet-table-data">
-                            <label class="sheet-label">Movimiento / Máximo<br/>
-                                <input type="number" name="attr_movement" class="black-circle50" value="0" min="0" max="30"/> /
-                                <input type="number" name="attr_movement_max" class="black-circle50" value="0" min="0" max="30"/>
-                            </label>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Movimiento / Máximo<br/>
+                                    <input type="number" name="attr_movement" class="black-circle50" value="0" min="0" max="30"/> /
+                                    <input type="number" name="attr_movement_max" class="black-circle50" value="0" min="0" max="30"/>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="sheet-table-row">
+                        <div class="sheet-table-row">
                             <span class="sheet-table-data">
                                 <label class="sheet-label">Iniciativa<br/>
                                     <input type="number" name="attr_initiative" class="white-circle50" value="0" min="-1"/> D +
@@ -57,60 +59,57 @@
                                     <button class="button" type="roll" value="&{template:skill} {{name=INICIATIVA}} {{dice_number=@{initiative} + @{dexterity} + @{perception} - @{wound_mod}}} {{pips=@{initiative_pip} + @{dexterity_pip} + @{perception_pip}}} {{result=[[(@{initiative} + @{dexterity} + @{perception} - @{wound_mod})D6sd + @{initiative_pip} + @{dexterity_pip} + @{perception_pip} &{tracker}]]}}" name="roll_initiative"></button>
                                 </label>
                             </span>
-                    </div>
-                    <div class="sheet-table-row">
-                        <div class="sheet-table-data">
-                            <label class="sheet-label">Acciones<br/>
-                                <input type="number" name="attr_num_actions" value="1" min="1" max="15" class="white-circle50"/>
-                            </label>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="sheet-col">
-                <div class="sheet-table">
-                    <div class="sheet-table-row">
-                        <div class="sheet-table-data">
-                            <label class="sheet-label">Sensible a La Fuerza<br/>
-                                <label class="switch-sensitive">
-                                    <input type="checkbox">
-                                    <span class="slider-sensitive round"></span>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Acciones<br/>
+                                    <input type="number" name="attr_num_actions" value="1" min="1" max="15" class="white-circle50"/>
                                 </label>
-                            </label>
-                            <label class="sheet-label" style="color:#4bd5ee">Puntos de La Fuerza<br/>
-                                <input type="number" name="attr_force_points" min="0" max="100" class="blue-circle50"/>
-                            </label>
-                            <label class="sheet-label" style="color:#f00">Puntos del Lado Obscuro<br/>
-                                <input type="number" name="attr_dark_points" min="0" max="100" class="red-circle50"/>
-                            </label>
-                            <label class="sheet-label">Puntos de Personaje<br/>
-                                <input type="number" name="attr_character_points" min="0" max="100" class="black-circle50"/>
-                            </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="sheet-table-row">
-                        <div class="sheet-table-data">
-                            <label class="sheet-label">Tirada Extra<br/>
-                                <input type="number" name="attr_extra_dice" value="0" min="0" max="15" class="white-circle50"/>
-                                <button class="button" type="roll" value="&{template:skill} {{name=TIRADA EXTRA}} {{dice_number=@{extra_dice}}} {{pips=0}} {{result=[[@{extra_dice}D6sd]]}}" name="roll_extraroll"></button>
-                            </label>
+                </div>
+                <div class="sheet-col">
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Sensible a La Fuerza<br/>
+                                    <label class="switch-sensitive">
+                                        <input type="checkbox">
+                                        <span class="slider-sensitive round"></span>
+                                    </label>
+                                </label>
+                                <label class="sheet-label" style="color:#4bd5ee">Puntos de La Fuerza<br/>
+                                    <input type="number" name="attr_force_points" min="0" max="100" class="blue-circle50"/>
+                                </label>
+                                <label class="sheet-label" style="color:#f00">Puntos del Lado Obscuro<br/>
+                                    <input type="number" name="attr_dark_points" min="0" max="100" class="red-circle50"/>
+                                </label>
+                                <label class="sheet-label">Puntos de Personaje<br/>
+                                    <input type="number" name="attr_character_points" min="0" max="100" class="black-circle50"/>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">Tirada Extra<br/>
+                                    <input type="number" name="attr_extra_dice" value="0" min="0" max="15" class="white-circle50"/>
+                                    <button class="button" type="roll" value="&{template:skill} {{name=TIRADA EXTRA}} {{dice_number=@{extra_dice}}} {{pips=0}} {{result=[[@{extra_dice}D6sd]]}}" name="roll_extraroll"></button>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- ---------------------------------------- PC ---------------------------------------- -->
-        <div class="sheet-tab-content tab1">
             <hr class="sheet-line"/>
 
-            <input type="radio" name="attr_subtab" class="tab tab1" value="1" title="DATABANK" checked="checked"/>
+            <input type="radio" name="attr_subtab" class="tab tab1" value="1" title="PERSONAJE" checked="checked"/>
             <input type="radio" name="attr_subtab" class="tab tab2" value="2" title="HABILIDADES"/>
-            <input type="radio" name="attr_subtab" class="tab tab3" value="3" title="ARMADURA"/>
-            <input type="radio" name="attr_subtab" class="tab tab4" value="4" title="ATAQUES"/>
-            <input type="radio" name="attr_subtab" class="tab tab5" value="5" title="EQUIPO"/>
-            <input type="radio" name="attr_subtab" class="tab tab6" value="6" title="LA FUERZA"/>
-            <input type="radio" name="attr_subtab" class="tab tab7" value="7" title="COMPLETO"/>
+            <input type="radio" name="attr_subtab" class="tab tab3" value="3" title="COMBATE"/>
+            <input type="radio" name="attr_subtab" class="tab tab4" value="4" title="EQUIPO"/>
+            <input type="radio" name="attr_subtab" class="tab tab5" value="5" title="LA FUERZA"/>
+            <input type="radio" name="attr_subtab" class="tab tab6" value="6" title="COMPLETO"/>
 
             <!--input type="hidden" class="sheet-tabstoggle-pc" name="attr_sheetPcTab" value="bio"/>
             <div>
@@ -124,10 +123,10 @@
                 <button type="action" name="act_full" class="tab">COMPLETO</button>
             </div-->
 
-            <hr class="sheet-line"/>
-
-            <!-- DATABANK -->
+            <!-- PERSONAJE -->
             <div class="sheet-tab-content tab1">
+                <hr class="sheet-line"/>
+
                 <div class="sheet-3colrow">
                     <div class="sheet-col">
                         <div class="sheet-table">
@@ -211,29 +210,22 @@
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Deber / Obligación / Moralidad
-                                        <textarea rows="4" name="attr_duty" class="textarea6"></textarea>
+                                    <label class="sheet-label">Deber / Obligación / Moralidad<br/>
+                                        <textarea rows="4" name="attr_duty_obligation_morality" class="textarea6"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Obligación
-                                        <textarea rows="4" name="attr_obligation" class="textarea6"></textarea>
+                                    <label class="sheet-label">Ventajas / Desventajas<br/>
+                                        <textarea rows="4" name="attr_advantages_disadvantages" class="textarea6"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Ventajas
-                                        <textarea rows="4" name="attr_advantages" class="textarea6"></textarea>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Desventajas
-                                        <textarea rows="4" name="attr_disadvantages" class="textarea6"></textarea>
+                                    <label class="sheet-label">Especializaciones y Talentos<br/>
+                                        <textarea rows="4" name="attr_talents" class="textarea6"></textarea>
                                     </label>
                                 </div>
                             </div>
@@ -248,14 +240,14 @@
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Historia
+                                    <label class="sheet-label">Historia<br/>
                                         <textarea rows="4" name="attr_background" class="textarea6"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Frase Célebre
+                                    <label class="sheet-label">Frase Célebre<br/>
                                         <textarea rows="4" name="attr_quotes" class="textarea6"></textarea>
                                     </label>
                                 </div>
@@ -266,14 +258,14 @@
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Personalidad
+                                    <label class="sheet-label">Personalidad<br/>
                                         <textarea rows="4" name="attr_personality" class="textarea6"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Destino
+                                    <label class="sheet-label">Destino<br/>
                                         <textarea rows="4" name="attr_destiny" class="textarea6"></textarea>
                                     </label>
                                 </div>
@@ -289,7 +281,7 @@
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Aliados / Contactos
+                                    <label class="sheet-label">Aliados / Contactos<br/>
                                         <textarea rows="4" name="attr_allies" class="textarea6"></textarea>
                                     </label>
                                 </div>
@@ -300,7 +292,7 @@
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
-                                    <label class="sheet-label">Enemigos / Rivales
+                                    <label class="sheet-label">Enemigos / Rivales<br/>
                                         <textarea rows="4" name="attr_enemies" class="textarea6"></textarea>
                                     </label>
                                 </div>
@@ -311,13 +303,15 @@
 
                 <hr class="sheet-line"/>
 
-                <label class="sheet-label">Notas
+                <label class="sheet-label">Notas Adicionales<br/>
                     <textarea rows="4" name="attr_notes" class="textarea100"></textarea>
                 </label>
             </div>
 
             <!-- ATRIBUTOS Y HABILIDADES -->
             <div class="sheet-tab-content tab2">
+                <hr class="sheet-line"/>
+
                 <div class="sheet-2colrow">
                     <div class="sheet-col">
                         <!-- CONOCIMIENTO -->
@@ -462,226 +456,214 @@
                 </div>
             </div>
 
-            <!-- ARMADURA -->
+            <!-- COMBATE -->
             <div class="sheet-tab-content tab3">
-                <label class="sheet-label-center">ARMADURA</label>
-                <div class="sheet-3colrow">
-                    <div class="sheet-col">
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Defensa<br/>
-                                        <input type="text" name="attr_armor_name" class="width100">
-                                    </label>
+                <hr class="sheet-line"/>
+
+                <input type="radio" name="attr_combattab" class="tab tab1" value="1" title="ATAQUE" checked="checked"/>
+                <input type="radio" name="attr_combattab" class="tab tab2" value="2" title="DEFENSA"/>
+                <input type="radio" name="attr_combattab" class="tab tab3" value="3" title="RANGO"/>
+
+                <div class="sheet-tab-content tab1">
+                    <hr class="sheet-line"/>
+
+                    <div class="sheet-3colrow">
+                        <div class="sheet-col">
+                            <div class="sheet-table">
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Estilo / Técnica<br/>
+                                            <input type="text" name="attr_fighting_style" class="width100">
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Tipo<br/>
-                                        <input type="text" name="attr_armor_type" class="width100">
-                                    </label>
+                        </div>
+                        <div class="sheet-col">
+                            <div class="sheet-table">
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Luchar<br/>
+                                            <input type="number" name="attr_grabdice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_grabpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=Luchar}} {{dice_number=@{grabdice} - @{wound_mod} - @{num_actions_mod}}} {{pips=@{grabpip}}} {{result=[[(@{grabdice} - @{wound_mod} - @{num_actions_mod})D6sd + @{grabpip}]]}}" name="roll_grab"></button>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Penalizador Destreza<br/>
-                                        - <input type="number" name="attr_minus_dex" class="weapon-circle4" value="0" min="0" max="2"/>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Penalizador Percepción<br/>
-                                        - <input type="number" name="attr_minus_per" class="weapon-circle4" value="0" min="0" max="2"/>
-                                    </label>
+                        </div>
+                        <div class="sheet-col">
+                            <div class="sheet-table">
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Pelear<br/>
+                                            <input type="number" name="attr_brawldice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_brawlpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=Pelear}} {{dice_number=@{brawldice} - @{wound_mod} - @{num_actions_mod}}} {{pips=@{brawlpip}}} {{result=[[(@{brawldice} - @{wound_mod} - @{num_actions_mod})D6sd + @{brawlpip}]]}}" name="roll_brawl"></button>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="sheet-col">
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Modelo<br/>
-                                        <input type="text" name="attr_armor_model" class="width100">
-                                    </label>
+
+                    <hr class="sheet-line"/>
+
+                    <fieldset class="repeating_closeattacks">
+                        <div class="sheet-3colrow">
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Arma<br/>
+                                                <input type="text" name="attr_close_attack_name" class="width100">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Carga<br/>
+                                                <select class="width100" name="attr_close_attack_encumbrance">
+                                                    <option selected="selected" value="6">Ligera [ 6 ]</option>
+                                                    <option value="3">Media [ 3 ]</option>
+                                                    <option value="1">Pesada [ 1 ]</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Material<br/>
-                                        <input type="text" name="attr_armor_material" class="width100">
-                                    </label>
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Modelo<br/>
+                                                <input type="text" name="attr_close_attack_model" class="width100">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Material<br/>
+                                                <input type="text" name="attr_close_attack_material" class="width100">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Durabilidad<br/>
+                                                <div class="sheet-table">
+                                                    <div class="sheet-table-row">
+                                                        <div class="sheet-table-data">
+                                                            <label class="container">
+                                                                <input type="checkbox" name="attr_close_attack_durability_1"/><span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="sheet-table-data">
+                                                            <label class="container">
+                                                                <input type="checkbox" name="attr_close_attack_durability_2"/><span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="sheet-table-data">
+                                                            <label class="container">
+                                                                <input type="checkbox" name="attr_close_attack_durability_3"/><span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Durabilidad<br/>
-                                        <div class="sheet-table">
-                                            <div class="sheet-table-row">
-                                                <div class="sheet-table-data">
-                                                    <label class="container">
-                                                        <input type="checkbox" name="attr_armor_durability_1"/><span class="checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="sheet-table-data">
-                                                    <label class="container">
-                                                        <input type="checkbox" name="attr_armor_durability_2"/><span class="checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="sheet-table-data">
-                                                    <label class="container">
-                                                        <input type="checkbox" name="attr_armor_durability_3"/><span class="checkmark"></span>
-                                                    </label>
-                                                </div>
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Habilidad<br/>
+                                                <input type="text" name="attr_close_skill_attack_name" class="width100" list="close_skills">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Especialización<br/>
+                                                <input type="number" name="attr_closeattackdice" class="weapon-circle4" value="0" min="0"/> D +
+                                                <input type="number" name="attr_closeattackpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Daño<br/>
+                                                <input type="number" name="attr_closedamagedice" class="weapon-circle4" value="1" min="0"/> D +
+                                                <input type="number" name="attr_closedamagepip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                                <button class="button" type="roll" value="&{template:attack} {{name=@{close_attack_name}}} {{dice_number=@{closeattackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{closeattackpip}}} {{result=[[(@{closeattackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{closeattackpip}]]}} {{damage=[[(@{closedamagedice})D6sd + @{closedamagepip}]]}}" name="roll_closeattackname"></button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-2colrow">
+                            <div class="sheet-col">
+                                <label class="sheet-label">Mejoras<br/>
+                                    <div class="sheet-table">
+                                        <div class="sheet-table-row">
+                                            <div class="sheet-table-data">
+                                                <label class="containerE">
+                                                    <input type="checkbox" name="attr_close_attack_enhancement_1_check"/><span class="checkmarkE"></span>
+                                                </label>
+                                                <input type="text" name="attr_close_attack_enhancement_1" class="width80">
                                             </div>
                                         </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sheet-col">
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Protección<br/>
-                                        <input type="number" name="attr_protectdice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_protectpip" class="weapon-circle4" value="0" min="-1" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Protección}} {{dice_number=@{protectdice} + @{strength}}} {{pips=@{protectpip} + @{strength_pip}}} {{result=[[(@{protectdice} + @{strength})D6sd + @{protectpip} + @{strength_pip}]]}}" name="roll_protectarmorname"></button>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Escudo de Energía<br/>
-                                        <input type="number" name="attr_shielddice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_shieldpip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Escudo de Energía}} {{dice_number=@{shielddice} + @{strength}}} {{pips=@{shieldpip} + @{strength_pip}}} {{result=[[(@{shielddice} + @{strength})D6sd + @{shieldpip} + @{strength_pip}]]}}" name="roll_shieldarmorname"></button>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Sistema Multi-Frecuencia de Adquisición de Objetivos<br/>
-                                        <input type="number" name="attr_smfaodice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_smfaopip" class="weapon-circle4" value="0" min="-1" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} SMFAO}} {{dice_number=@{smfaodice} + @{perception}}} {{pips=@{smfaopip} + @{perception_pip}}} {{result=[[(@{smfaodice} + @{perception})D6sd + @{smfaopip} + @{perception_pip}]]}}" name="roll_smfaoarmorname"></button>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sheet-2colrow">
-                    <div class="sheet-col">
-                        <label class="sheet-label">Mejoras<br/>
-                            <div class="sheet-table">
-                                <div class="sheet-table-row">
-                                    <div class="sheet-table-data">
-                                        <label class="containerE">
-                                            <input type="checkbox" name="attr_armor_enhancement_1_check"/><span class="checkmarkE"></span>
-                                        </label>
-                                        <input type="text" name="attr_armor_enhancement_1" class="width80">
+                                        <div class="sheet-table-row">
+                                            <div class="sheet-table-data">
+                                                <label class="containerE">
+                                                    <input type="checkbox" name="attr_close_attack_enhancement_2_check"/><span class="checkmarkE"></span>
+                                                </label>
+                                                <input type="text" name="attr_close_attack_enhancement_2" class="width80">
+                                            </div>
+                                        </div>
+                                        <div class="sheet-table-row">
+                                            <div class="sheet-table-data">
+                                                <label class="containerE">
+                                                    <input type="checkbox" name="attr_close_attack_enhancement_3_check"/><span class="checkmarkE"></span>
+                                                </label>
+                                                <input type="text" name="attr_close_attack_enhancement_3" class="width80">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="sheet-table-row">
-                                    <div class="sheet-table-data">
-                                        <label class="containerE">
-                                            <input type="checkbox" name="attr_armor_enhancement_2_check"/><span class="checkmarkE"></span>
-                                        </label>
-                                        <input type="text" name="attr_armor_enhancement_2" class="width80">
-                                    </div>
-                                </div>
-                                <div class="sheet-table-row">
-                                    <div class="sheet-table-data">
-                                        <label class="containerE">
-                                            <input type="checkbox" name="attr_armor_enhancement_3_check"/><span class="checkmarkE"></span>
-                                        </label>
-                                        <input type="text" name="attr_armor_enhancement_3" class="width80">
+                                </label>
+                            </div>
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Notas Adicionales<br/>
+                                                <textarea rows="6" name="attr_close_attack_notes" class="textarea100"></textarea>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </label>
-                    </div>
-                    <div class="sheet-col">
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Notas Adicionales<br/>
-                                        <textarea rows="6" name="attr_armor_notes" class="textarea100"></textarea>
-                                    </label>
-                                </div>
-                            </div>
                         </div>
-                    </div>
+                        <hr class="sheet-line"/>
+                    </fieldset>
                 </div>
-                <hr class="sheet-line"/>
-                <!-- REACCIONES -->
-                <label class="sheet-label-center">REACCIONES</label>
-                <div class="sheet-3colrow">
-                    <div class="sheet-col">
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Bloquear<br/>
-                                        <input type="number" name="attr_blockdice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_blockpip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=Bloquear}} {{dice_number=@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{blockpip}}} {{result=[[(@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{blockpip}]]}}" name="roll_block"></button>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sheet-col">
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Desviar<br/>
-                                        <input type="number" name="attr_parrydice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_parrypip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=Desviar}} {{dice_number=@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{parrypip}}} {{result=[[(@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{parrypip}]]}}" name="roll_parry"></button>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sheet-col">
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Esquivar<br/>
-                                        <input type="number" name="attr_dodgedice" class="weapon-circle4" value="0" min="0"/> D +
-                                        <input type="number" name="attr_dodgepip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                        <button class="button" type="roll" value="&{template:skill} {{name=Esquivar}} {{dice_number=@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{dodgepip}}} {{result=[[(@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{dodgepip}]]}}" name="roll_dodge"></button>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- ATAQUES -->
-            <div class="sheet-tab-content tab4">
-                <label class="sheet-label-center">ARMAS CORTAS</label>
-                <fieldset class="repeating_closeattacks">
+                <div class="sheet-tab-content tab2">
+                    <hr class="sheet-line"/>
+
                     <div class="sheet-3colrow">
                         <div class="sheet-col">
                             <div class="sheet-table">
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
-                                        <button type="button" class="collapsible">Detalle</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sheet-col">
-                            <div class="sheet-table">
-                                <div class="sheet-table-row">
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Ataque<br/>
-                                            <input type="text" name="attr_close_attack_name" class="width100">
+                                        <label class="sheet-label">Bloquear<br/>
+                                            <input type="number" name="attr_blockdice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_blockpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=Bloquear}} {{dice_number=@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{blockpip}}} {{result=[[(@{blockdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{blockpip}]]}}" name="roll_block"></button>
                                         </label>
                                     </div>
                                 </div>
@@ -691,23 +673,60 @@
                             <div class="sheet-table">
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
-                                        <label class="sheet-label">Daño<br/>
-                                            <input type="number" name="attr_damagedice" class="weapon-circle4" value="1" min="0"/> D +
-                                            <input type="number" name="attr_damagepip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                            <button class="button" type="roll" value="&{template:attack} {{name=@{attack_name}}} {{dice_number=@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{attackpip}}} {{result=[[(@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{attackpip}]]}} {{damage=[[(@{damagedice})D6sd + @{damagepip}]]}}" name="roll_attackname"></button>
+                                        <label class="sheet-label">Desviar<br/>
+                                            <input type="number" name="attr_parrydice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_parrypip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=Desviar}} {{dice_number=@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{parrypip}}} {{result=[[(@{parrydice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{parrypip}]]}}" name="roll_parry"></button>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-col">
+                            <div class="sheet-table">
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Esquivar<br/>
+                                            <input type="number" name="attr_dodgedice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_dodgepip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=Esquivar}} {{dice_number=@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{dodgepip}}} {{result=[[(@{dodgedice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{dodgepip}]]}}" name="roll_dodge"></button>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <hr class="sheet-line"/>
+
                     <div class="sheet-3colrow">
                         <div class="sheet-col">
                             <div class="sheet-table">
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Armadura<br/>
+                                            <input type="text" name="attr_armor_name" class="width100">
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
                                         <label class="sheet-label">Tipo<br/>
-                                            <input type="text" name="attr_close_attack_type" class="width100">
+                                            <input type="text" name="attr_armor_type" class="width100">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Penalizador Destreza<br/>
+                                            - <input type="number" name="attr_minus_dex" class="weapon-circle4" value="0" min="0" max="2"/>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Penalizador Percepción<br/>
+                                            - <input type="number" name="attr_minus_per" class="weapon-circle4" value="0" min="0" max="2"/>
                                         </label>
                                     </div>
                                 </div>
@@ -718,14 +737,14 @@
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
                                         <label class="sheet-label">Modelo<br/>
-                                            <input type="text" name="attr_close_attack_model" class="width100">
+                                            <input type="text" name="attr_armor_model" class="width100">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
                                         <label class="sheet-label">Material<br/>
-                                            <input type="text" name="attr_close_attack_material" class="width100">
+                                            <input type="text" name="attr_armor_material" class="width100">
                                         </label>
                                     </div>
                                 </div>
@@ -736,17 +755,17 @@
                                                 <div class="sheet-table-row">
                                                     <div class="sheet-table-data">
                                                         <label class="container">
-                                                            <input type="checkbox" name="attr_close_attack_durability_1"/><span class="checkmark"></span>
+                                                            <input type="checkbox" name="attr_armor_durability_1"/><span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                     <div class="sheet-table-data">
                                                         <label class="container">
-                                                            <input type="checkbox" name="attr_close_attack_durability_2"/><span class="checkmark"></span>
+                                                            <input type="checkbox" name="attr_armor_durability_2"/><span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                     <div class="sheet-table-data">
                                                         <label class="container">
-                                                            <input type="checkbox" name="attr_close_attack_durability_3"/><span class="checkmark"></span>
+                                                            <input type="checkbox" name="attr_armor_durability_3"/><span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -760,16 +779,28 @@
                             <div class="sheet-table">
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
-                                        <label class="sheet-label">Habilidad<br/>
-                                            <input type="text" name="attr_close_skill_attack_name" class="width80" list="close_skills">
+                                        <label class="sheet-label">Protección<br/>
+                                            <input type="number" name="attr_protectdice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_protectpip" class="weapon-circle4" value="0" min="-1" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Protección}} {{dice_number=@{protectdice} + @{strength}}} {{pips=@{protectpip} + @{strength_pip}}} {{result=[[(@{protectdice} + @{strength})D6sd + @{protectpip} + @{strength_pip}]]}}" name="roll_protectarmorname"></button>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
-                                        <label class="sheet-label">Especialización<br/>
-                                            <input type="number" name="attr_attackdice" class="weapon-circle4" value="0" min="0"/> D +
-                                            <input type="number" name="attr_attackpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                        <label class="sheet-label">Escudo de Energía<br/>
+                                            <input type="number" name="attr_shielddice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_shieldpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} Escudo de Energía}} {{dice_number=@{shielddice} + @{strength}}} {{pips=@{shieldpip} + @{strength_pip}}} {{result=[[(@{shielddice} + @{strength})D6sd + @{shieldpip} + @{strength_pip}]]}}" name="roll_shieldarmorname"></button>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Sistema Multi-Frecuencia de Adquisición de Objetivos<br/>
+                                            <input type="number" name="attr_smfaodice" class="weapon-circle4" value="0" min="0"/> D +
+                                            <input type="number" name="attr_smfaopip" class="weapon-circle4" value="0" min="-1" max="2"/>
+                                            <button class="button" type="roll" value="&{template:skill} {{name=@{armor_name} SMFAO}} {{dice_number=@{smfaodice} + @{perception}}} {{pips=@{smfaopip} + @{perception_pip}}} {{result=[[(@{smfaodice} + @{perception})D6sd + @{smfaopip} + @{perception_pip}]]}}" name="roll_smfaoarmorname"></button>
                                         </label>
                                     </div>
                                 </div>
@@ -819,103 +850,205 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="sheet-tab-content tab3">
                     <hr class="sheet-line"/>
-                </fieldset>
-                <hr class="sheet-line"/>
-                <label class="sheet-label-center">ARMAS DE RANGO</label>
-                <fieldset class="repeating_attacks">
-                    <div class="sheet-table">
-                        <div class="sheet-table-row">
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Ataque<br/>
-                                    <input type="text" name="attr_attack_name" class="width100">
-                                </label>
+
+                    <fieldset class="repeating_rangeattacks">
+                        <div class="sheet-3colrow">
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Arma<br/>
+                                                <input type="text" name="attr_range_attack_name" class="width100">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Carga<br/>
+                                                <select class="width100" name="attr_range_attack_encumbrance">
+                                                    <option selected="selected" value="6">Ligera [ 6 ]</option>
+                                                    <option value="3">Media [ 3 ]</option>
+                                                    <option value="1">Pesada [ 1 ]</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Modelo<br/>
-                                    <input type="text" name="attr_attack_model" class="width80"/>
-                                </label>
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Modelo<br/>
+                                                <input type="text" name="attr_range_attack_model" class="width100">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Material<br/>
+                                                <input type="text" name="attr_range_attack_material" class="width100">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Durabilidad<br/>
+                                                <div class="sheet-table">
+                                                    <div class="sheet-table-row">
+                                                        <div class="sheet-table-data">
+                                                            <label class="container">
+                                                                <input type="checkbox" name="attr_range_attack_durability_1"/><span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="sheet-table-data">
+                                                            <label class="container">
+                                                                <input type="checkbox" name="attr_range_attack_durability_2"/><span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="sheet-table-data">
+                                                            <label class="container">
+                                                                <input type="checkbox" name="attr_range_attack_durability_3"/><span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="sheet-table-data">
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Habilidad<br/>
+                                                <input type="text" name="attr_range_skill_attack_name" class="width100" list="range_skills">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Especialización<br/>
+                                                <input type="number" name="attr_rangeattackdice" class="weapon-circle4" value="0" min="0"/> D +
+                                                <input type="number" name="attr_rangeattackpip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Daño<br/>
+                                                <input type="number" name="attr_rangedamagedice" class="weapon-circle4" value="1" min="0"/> D +
+                                                <input type="number" name="attr_rangedamagepip" class="weapon-circle4" value="0" min="0" max="2"/>
+                                                <button class="button" type="roll" value="&{template:attack} {{name=@{range_attack_name}}} {{dice_number=@{rangeattackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{rangeattackpip}}} {{result=[[(@{rangeattackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{rangeattackpip}]]}} {{damage=[[(@{rangedamagedice})D6sd + @{rangedamagepip}]]}}" name="roll_rangeattackname"></button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-2colrow">
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Alcance - Corto / Medio / Largo / Extremo<br/>
+                                                <input type="number" name="attr_point_blank_range" class="weapon-circle4" value="0" min="0"/> -
+                                                <input type="number" name="attr_short_range" class="weapon-circle4" value="0" min="0"/> /
+                                                <input type="number" name="attr_medium_range" class="weapon-circle4" value="0" min="0"/> /
+                                                <input type="number" name="attr_long_range" class="weapon-circle4" value="0" min="0"/> /
+                                                <input type="number" name="attr_extreme_range" class="weapon-circle4" value="0" min="0"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sheet-col">
+                                <div class="sheet-2colrow">
+                                    <div class="sheet-col">
+                                        <div class="sheet-table">
+                                            <div class="sheet-table-row">
+                                                <div class="sheet-table-data">
+                                                    <label class="sheet-label">Munición / Cartucho<br/>
+                                                        <input type="number" name="attr_ammo" class="weapon-circle4" value="0" min="0"/> /
+                                                        <input type="number" name="attr_ammo_max" class="weapon-circle4" value="0" min="0"/>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sheet-col">
+                                        <div class="sheet-table">
+                                            <div class="sheet-table-row">
+                                                <div class="sheet-table-data">
+                                                    <label class="sheet-label">Cadencia de Disparo<br/>
+                                                        <input type="number" name="attr_rate_of_fire" class="weapon-circle4" value="1" min="1"/>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-2colrow">
+                            <div class="sheet-col">
                                 <label class="sheet-label">Mejoras<br/>
-                                    <input type="text" name="attr_attack_enhancements" class="width80"/>
+                                    <div class="sheet-table">
+                                        <div class="sheet-table-row">
+                                            <div class="sheet-table-data">
+                                                <label class="containerE">
+                                                    <input type="checkbox" name="attr_range_attack_enhancement_1_check"/><span class="checkmarkE"></span>
+                                                </label>
+                                                <input type="text" name="attr_range_attack_enhancement_1" class="width80">
+                                            </div>
+                                        </div>
+                                        <div class="sheet-table-row">
+                                            <div class="sheet-table-data">
+                                                <label class="containerE">
+                                                    <input type="checkbox" name="attr_range_attack_enhancement_2_check"/><span class="checkmarkE"></span>
+                                                </label>
+                                                <input type="text" name="attr_range_attack_enhancement_2" class="width80">
+                                            </div>
+                                        </div>
+                                        <div class="sheet-table-row">
+                                            <div class="sheet-table-data">
+                                                <label class="containerE">
+                                                    <input type="checkbox" name="attr_range_attack_enhancement_3_check"/><span class="checkmarkE"></span>
+                                                </label>
+                                                <input type="text" name="attr_range_attack_enhancement_3" class="width80">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </label>
                             </div>
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Ensamblajes<br/>
-                                    <input type="text" name="attr_attack_enhancements" class="width80"/>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="sheet-table-row">
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Habilidad<br/>
-                                    <input type="text" name="attr_skill_attack_name" class="width80" list="weapon_skills">
-                                </label>
-                            </div>
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Especialización<br/>
-                                    <input type="number" name="attr_attackdice" class="weapon-circle4" value="0" min="0"/> D +
-                                    <input type="number" name="attr_attackpip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                </label>
-                            </div>
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Daño<br/>
-                                    <input type="number" name="attr_damagedice" class="weapon-circle4" value="1" min="0"/> D +
-                                    <input type="number" name="attr_damagepip" class="weapon-circle4" value="0" min="0" max="2"/>
-                                    <button class="button" type="roll" value="&{template:attack} {{name=@{attack_name}}} {{dice_number=@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex}}} {{pips=@{attackpip}}} {{result=[[(@{attackdice} - @{wound_mod} - @{num_actions_mod} - @{minus_dex})D6sd + @{attackpip}]]}} {{damage=[[(@{damagedice})D6sd + @{damagepip}]]}}" name="roll_attackname"></button>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sheet-table">
-                        <div class="sheet-table-row">
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Alcance - Corto / Medio / Largo / Extremo<br/>
-                                    <input type="number" name="attr_point_blank_range" class="weapon-circle4" value="0" min="0"/> -
-                                    <input type="number" name="attr_short_range" class="weapon-circle4" value="0" min="0"/> /
-                                    <input type="number" name="attr_medium_range" class="weapon-circle4" value="0" min="0"/> /
-                                    <input type="number" name="attr_long_range" class="weapon-circle4" value="0" min="0"/> /
-                                    <input type="number" name="attr_extreme_range" class="weapon-circle4" value="0" min="0"/>
-                                </label>
-                            </div>
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Cadencia<br/>
-                                    <input type="number" name="attr_rate_of_fire" class="weapon-circle4" value="1" min="1"/>
-                                </label>
-                            </div>
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Munición / Cartucho<br/>
-                                    <input type="number" name="attr_ammo" class="weapon-circle4" value="0" min="0"/> /
-                                    <input type="number" name="attr_ammo_max" class="weapon-circle4" value="0" min="0"/>
-                                </label>
-                            </div>
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Carga<br/>
-                                    <input type="number" name="attr_encumbrance" class="weapon-circle4" value="0" min="0"/>
-                                </label>
+                            <div class="sheet-col">
+                                <div class="sheet-table">
+                                    <div class="sheet-table-row">
+                                        <div class="sheet-table-data">
+                                            <label class="sheet-label">Notas Adicionales<br/>
+                                                <textarea rows="6" name="attr_range_attack_notes" class="textarea100"></textarea>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="sheet-table">
-                        <div class="sheet-table-row">
-                            <div class="sheet-table-data">
-                                <label class="sheet-label">Notas Adicionales<br/>
-                                    <textarea rows="4" name="attr_attack_notes" class="textareaM"></textarea>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="sheet-line"/>
-                </fieldset>
+                        <hr class="sheet-line"/>
+                    </fieldset>
+                </div>
             </div>
 
             <!-- EQUIPO -->
-            <div class="sheet-tab-content tab5">
-                <!-- CRÉDITOS -->
-                <div class="sheet-colrow">
+            <div class="sheet-tab-content tab4">
+                <hr class="sheet-line"/>
+
+                <div class="sheet-4colrow">
                     <div class="sheet-col">
-                        <label class="sheet-label-center">CRÉDITOS</label>
                         <div class="sheet-table">
                             <div class="sheet-table-row">
                                 <div class="sheet-table-data">
@@ -923,16 +1056,34 @@
                                         <input type="text" name="attr_credit_chip" class="width80"/>
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="sheet-table">
+                            <div class="sheet-table-row">
                                 <div class="sheet-table-data">
                                     <label class="sheet-label">Efectivo<br/>
                                         <input type="text" name="attr_credit_cash" class="width80"/>
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="sheet-table">
+                            <div class="sheet-table-row">
                                 <div class="sheet-table-data">
                                     <label class="sheet-label">Lingotes<br/>
                                         <input type="text" name="attr_credit_ingot" class="width80"/>
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-col">
+                        <div class="sheet-table">
+                            <div class="sheet-table-row">
                                 <div class="sheet-table-data">
                                     <label class="sheet-label">Cuenta CBIG<br/>
                                         <input type="text" name="attr_credit_cbig" class="width80"/>
@@ -940,61 +1091,91 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sheet-table">
-                            <div class="sheet-table-row">
-                                <div class="sheet-table-data">
-                                    <label class="sheet-label">Gran Total<br/>
-                                        <input type="text" name="attr_total_credit" class="credit"/>
-                                    </label>
-                                </div>
+                    </div>
+                </div>
+                <div class="sheet-col">
+                    <div class="sheet-table">
+                        <div class="sheet-table-row">
+                            <div class="sheet-table-data">
+                                <label class="sheet-label">GRAN TOTAL<br/>
+                                    <input type="text" name="attr_total_credit" class="width100 credit"/>
+                                </label>
                             </div>
                         </div>
-                        <hr class="sheet-line"/>
-                        <label class="sheet-label-center">PERTENENCIAS</label>
-                        <div class="sheet-table">
-                            <fieldset class="repeating_assets">
+                    </div>
+                </div>
+
+                <hr class="sheet-line"/>
+
+                <fieldset class="repeating_assets">
+                    <div class="sheet-3colrow">
+                        <div class="sheet-col">
+                            <div class="sheet-table">
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
-                                        <label class="sheet-label">Nombre<br/>
+                                        <label class="sheet-label">Riqueza<br/>
                                             <input type="text" name="attr_asset_name" class="width100">
                                         </label>
                                     </div>
+                                </div>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Descripción<br/>
+                                            <input type="text" name="attr_asset_description" class="width100">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Ubicación<br/>
+                                            <input type="text" name="attr_asset_location" class="width100">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-col">
+                            <div class="sheet-table">
+                                <div class="sheet-table-row">
                                     <div class="sheet-table-data">
                                         <label class="sheet-label">Valor<br/>
                                             <input type="text" name="attr_asset_value" class="width80">
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Descripción
-                                            <textarea rows="4" name="attr_asset_description" class="textareaM"></textarea>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="sheet-table-row">
                                     <div class="sheet-table-data">
                                         <label class="sheet-label">Disponibilidad<br/>
-                                            <input type="text" name="attr_asset_availability" class="width100">
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Ubicación<br/>
-                                            <input type="text" name="attr_asset_location" class="width80">
-                                        </label>
-                                    </div>
-                                    <div class="sheet-table-data">
-                                        <label class="sheet-label">Notas Adicionales
-                                            <textarea rows="4" name="attr_asset_notes" class="textareaM"></textarea>
+                                            <input type="text" name="attr_asset_availability" class="width50">
                                         </label>
                                     </div>
                                 </div>
-                                <hr class="sheet-line"/>
-                            </fieldset>
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Licencia<br/>
+                                            <input type="text" name="attr_asset_license" class="width50">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-col">
+                            <div class="sheet-table">
+                                <div class="sheet-table-row">
+                                    <div class="sheet-table-data">
+                                        <label class="sheet-label">Notas Adicionales<br/>
+                                            <textarea rows="4" name="attr_asset_notes" class="textarea6"></textarea>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <hr class="sheet-line"/>
+                </fieldset>
+
                 <hr class="sheet-line"/>
-                <!-- EQUIPO -->
-                <label class="sheet-label-center">EQUIPO</label>
+
                 <div class="sheet-2colrow">
                     <div class="sheet-col">
                         <div class="sheet-table">
@@ -1064,27 +1245,32 @@
             </div>
 
             <!-- LA FUERZA -->
-            <div class="sheet-tab-content tab6">
+            <div class="sheet-tab-content tab5">
+                <hr class="sheet-line"/>
+
                 <div class="sheet-col">
                     <div class="sheet-table">
                         <div class="sheet-table-row">
                             <div class="sheet-table-data">
                                 <label class="sheet-label">Número de Poderes Activos de La Fuerza
-                                    <select class="smallselect" name="attr_force_up" title="The number of power active is subtracted from all roll as a Multiple Action Penalty. Above Force Pain doesn't need to be added">
+                                    <select class="width50" name="attr_force_up" title="The number of power active is subtracted from all roll as a Multiple Action Penalty. Above Force Pain doesn't need to be added">
                                         <option selected="selected" value="0">0</option>
                                         <option value="-1">1</option>
                                         <option value="-2">2</option>
                                         <option value="-3">3</option>
                                         <option value="-4">4</option>
                                         <option value="-5">5</option>
+                                        <option value="-6">6</option>
                                     </select>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <hr class="sheet-line"/>
+
                 <div class="sheet-col">
-                    <hr class="sheet-line"/>
                     <!-- CONTROLAR -->
                     <div class="sheet-table">
                         <div class="sheet-table-row">
@@ -1096,18 +1282,18 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="sheet-table-row">
-                            <fieldset class="repeating_conskills">
-                                <div class="skill">
+                         <div class="sheet-table-row">
+                             <fieldset class="repeating_conskills">
+                                 <div class="skill">
                                     <label class="sheet-label">Poder<br/>
-                                        <input type="text" name="attr_conskillname" class="width80" list="conskills">
+                                        <input type="text" name="attr_conskillname" class="width100" list="conskills">
                                     </label>
                                     <label class="sheet-label">Descripción<br/>
-                                        <textarea rows="4" name="attr_conskilldescription" class="textareaM"></textarea>
+                                        <textarea rows="4" name="attr_conskilldescription" class="textarea100"></textarea>
                                     </label>
                                 </div>
-                            </fieldset>
-                        </div>
+                             </fieldset>
+                         </div>
                     </div>
                     <hr class="sheet-line"/>
                     <!-- SENTIR -->
@@ -1125,10 +1311,10 @@
                             <fieldset class="repeating_senskills">
                                 <div class="skill">
                                     <label class="sheet-label">Poder<br/>
-                                        <input type="text" name="attr_senskillname" class="width50" list="senskills">
+                                        <input type="text" name="attr_senskillname" class="width100" list="senskills">
                                     </label>
                                     <label class="sheet-label">Descripción<br/>
-                                        <textarea rows="4" name="attr_senskilldescription" class="textareaM"></textarea>
+                                        <textarea rows="4" name="attr_senskilldescription" class="textarea100"></textarea>
                                     </label>
                                 </div>
                             </fieldset>
@@ -1150,10 +1336,10 @@
                             <fieldset class="repeating_altskills">
                                 <div class="skill">
                                     <label class="sheet-label">Poder<br/>
-                                        <input type="text" name="attr_altskillname" class="width50" list="altskills">
+                                        <input type="text" name="attr_altskillname" class="width100" list="altskills">
                                     </label>
                                     <label class="sheet-label">Descripción<br/>
-                                        <textarea rows="4" name="attr_altskilldescription" class="textareaM"></textarea>
+                                        <textarea rows="4" name="attr_altskilldescription" class="textarea100"></textarea>
                                     </label>
                                 </div>
                             </fieldset>
@@ -1632,12 +1818,13 @@
     <option value="Vaciar Bolsillos">Vaciar Bolsillos</option>
 </datalist>
 <datalist id="strskills">
-    <option value="Cargar">Cargar</option>
     <option value="Escalar">Escalar</option>
     <option value="Intimidar">Intimidar</option>
+    <option value="Levantar">Levantar</option>
+    <option value="Luchar">Luchar</option>
     <option value="Nadar">Nadar</option>
     <option value="Pelear">Pelear</option>
-    <option value="Resistencia">Resistencia</option>
+    <option value="Resistir">Resistir</option>
     <option value="Saltar">Saltar</option>
 </datalist>
 <datalist id="mecskills">
@@ -1699,9 +1886,8 @@
     <option value="Armas Blancas">Armas Blancas</option>
     <option value="Armas Híbridas">Armas Híbridas</option>
     <option value="Espadas Láser">Espadas Láser</option>
-    <option value="Pelear">Pelear</option>
 </datalist>
-<datalist id="weapon_skills">
+<datalist id="range_skills">
     <option value="Arcos">Arcos</option>
     <option value="Armas Arcaicas">Armas Arcaicas</option>
     <option value="Armas Arrojadizas">Armas Arrojadizas</option>
