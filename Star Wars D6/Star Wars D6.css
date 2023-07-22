@@ -156,8 +156,8 @@
 
 .ui-dialog .charsheet .button[type="roll"]:hover {
     background-position: 0px;
-    background-image: radial-gradient(circle, #0f0, #080, #040);
-    border: 2px solid #080;
+    background-image: radial-gradient(circle, #fff, #0b0);
+    border: 2px solid #0b0;
 }
 
 .slider-health {
@@ -208,19 +208,14 @@
     width: 60px;
     height: 30px;
     top: 0;
-    left: 66%;
+    left: 69%;
     right: 0;
     bottom: 0;
     background-color: #000;
-    border: 2px solid #ccc;
-    border-radius: 30px;
+    border: 2px solid #080;
+    border-radius: 10px;
     -webkit-transition: .4s;
     transition: .4s;
-}
-
-.slider-sensitive:hover {
-    background-image: radial-gradient(circle, #fff, #0f0, #080, #040);
-    border: 2px solid #080;
 }
 
 .slider-sensitive:before {
@@ -237,11 +232,6 @@
 }
 
 input:checked + .slider-sensitive {
-    background-image: linear-gradient(to right, #4bd5ee, #fff);
-    border: 2px solid #4bd5ee;
-}
-
-input:checked + .slider-sensitive:hover {
     background-image: radial-gradient(circle, #fff, #0f0, #080, #040);
     border: 2px solid #080;
 }
@@ -253,7 +243,7 @@ input:checked + .slider-sensitive:before {
 }
 
 .slider-sensitive.round {
-    border-radius: 30x;
+    border-radius: 10px;
 }
 
 .slider-sensitive.round:before {
@@ -286,6 +276,16 @@ input:checked + .slider-sensitive:before {
     border-radius: 10px;
     background: #ccc;
     color: #000;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.green-circle50 {
+    border: 2px solid #0b0;
+    border-radius: 10px;
+    background: #000;
+    color: #0b0;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -993,14 +993,6 @@ body.sheet-darkmode .sheet-label-right {
     width: 0;
 }
 
-.containerE input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
 /* Create a custom checkbox */
 .checkmark {
     position: absolute;
@@ -1023,15 +1015,31 @@ body.sheet-darkmode .sheet-label-right {
     vertical-align: middle;
 }
 
+.checkmarkG {
+    position: absolute;
+    top: 0;
+    left: revert;
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+    border: 2px solid #0b0;
+    vertical-align: middle;
+}
+
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
     background-image: radial-gradient(circle, #fff, #4bd5ee);
     border: 2px solid #4bd5ee;
 }
 
-.containerE input:checked ~ .checkmarkE {
-    background-image: radial-gradient(circle, #0f0, #080, #040);
-    border: 2px solid #000;
+.container input:checked ~ .checkmarkE {
+    background-image: radial-gradient(circle, #ffe81f, #776007);
+    border: 2px solid #776007;
+}
+
+.container input:checked ~ .checkmarkG {
+    background-image: radial-gradient(circle, #fff, #0b0);
+    border: 2px solid #0b0;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -1042,6 +1050,12 @@ body.sheet-darkmode .sheet-label-right {
 }
 
 .checkmarkE:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkmarkG:after {
     content: "";
     position: absolute;
     display: none;
@@ -1060,7 +1074,19 @@ body.sheet-darkmode .sheet-label-right {
     transform: rotate(45deg);
 }
 
-.containerE .checkmarkE:after {
+.container .checkmarkE:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.container .checkmarkG:after {
     left: 9px;
     top: 5px;
     width: 5px;
