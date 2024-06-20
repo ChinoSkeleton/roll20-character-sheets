@@ -1,11 +1,11 @@
-/* Police Google Fonts */
+/* COG V4.5.1 */
 
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro&display=swap');
 
 /* Couleurs (anciennes)
-    Base bleu = #2F5860
-    Bleu light = #7F989D
-    Dégradé fond : 575D51 9B9E99 CECBC4 DDDAD2 ECEDE8 FDFEFD
+  Base bleu = #2F5860
+  Bleu light = #7F989D
+  Degrade fond : 575D51 9B9E99 CECBC4 DDDAD2 ECEDE8 FDFEFD
 */
 
 div,
@@ -327,6 +327,12 @@ button.sheet-flatbtn {
   font-size: 12px !important;
 }
 
+button.sheet-linkbtn {
+  margin-left: 0px !important; 
+  padding-left: 0px !important; 
+  color: var(--cog-bgcolor);
+}
+
 button[type='roll'].sheet-iconbtn::before {
   content: '';
 }
@@ -485,6 +491,23 @@ input.sheet-tab:checked + span::before {
   border-bottom-width: 5px;
 }
 
+button.sheet-subtab {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 150px;
+  color: var(--cog-txcolor);
+  background-color: var(--cog-bgcolor);
+  border: 1px solid purple;
+  border-radius: 5px;
+}
+
+input.sheet-toggle-subtab2:not([value="skills"]) ~ div.sheet-subtab2-skills,
+input.sheet-toggle-subtab2:not([value="traits"]) ~ div.sheet-subtab2-traits,
+input.sheet-toggle-subtab2:not([value="modsit"]) ~ div.sheet-subtab2-modsit,
+input.sheet-toggle-subtab2:not([value="buffs"]) ~ div.sheet-subtab2-buffs {
+    display: none;
+}
+
 input.sheet-hidden-tab {
   display: none;
   height: 0px;
@@ -633,6 +656,7 @@ textarea.sheet-statblock {
   margin: 5px;
   border: 1px dashed;
   height: 12em;
+  word-break: break-all;
 }
 
 textarea.sheet-sbresult {
@@ -704,7 +728,7 @@ textarea.sheet-sbresult {
 
 .sheet-rolltemplate-co1 td {
   margin: 0px;
-  padding: 0px 5px 0px 5px;
+  padding: 2px 5px 2px 5px;
   font-family: "Verdana";
   font-size: 12px;
   font-weight: normal;

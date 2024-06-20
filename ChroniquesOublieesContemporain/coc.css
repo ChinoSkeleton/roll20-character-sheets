@@ -1,3 +1,5 @@
+/* Version 3.17.1 */
+
 /* Couleurs
     Base noire = #000000
     Gris clair = #D3D3D3
@@ -451,6 +453,20 @@ input.sheet-tab:checked + span::before {
   background: #dcdcdc;
   border-bottom-color: #fff;
   border-bottom-width: 5px;
+}
+
+button.sheet-subtab {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+input.sheet-toggle-subtab2:not([value="skills"]) ~ div.sheet-subtab2-skills,
+input.sheet-toggle-subtab2:not([value="traits"]) ~ div.sheet-subtab2-traits,
+input.sheet-toggle-subtab2:not([value="buffs"]) ~ div.sheet-subtab2-buffs {
+    display: none;
 }
 
 input.sheet-hidden-tab {
